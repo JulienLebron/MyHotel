@@ -1,0 +1,95 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+
+<div class="banniere" style="position: relative;">
+    <div class="banniere">
+        <img src="{{ asset('images/hotel/banniere.jpg') }}" alt=""
+            style="height: 550px; width: 100%; object-fit: cover;">
+    </div>
+
+</div>
+
+{# form() est une fonction twig permettant d'afficher un formulaire #}
+{# {{ form(formArticle) }} #}
+
+
+<div class="container my-5" style="position: relative;">
+    <div class="hotel-info"
+        style="background: #FFFF; width: 600px; position: absolute; top: -270px; left: 0px; padding: 30px;">
+        <h4>K hotel Spa Champ-Elysees</h4>
+        <div class="row">
+            <div class="col-md-7">
+                <p>30 rue La Perouse, Paris, France, 75116</p>
+                <p>+33 (0) 1 45 00 83 70</p>
+                <a href="{{ path('home') }}">https://www.royal-hotel.com/</a>
+            </div>
+            <div class="col-md-5 text-center mt-3">
+                <a class="navbar-brand" href="{{ path('home') }}"><img src="{{ asset('images/hotel/logo_black.png')}}" style="width: 100px; height: 100px;"></a>
+            </div>
+        </div>
+    </div>
+    {{ form_start(formEdit) }}
+    <div class="row">
+        <div class="col-md-6">
+            {# form_start() et form_end() permettent de délimiter un formulaire, de modifier ses champs, de changer la méthode du formulaire ...  #}
+
+            {# form_row() permet de gérer l'affichage d'un champ et de son label #}
+            <h4 class="mb-4">Séjour</h4>
+            <div class="input-group my-3 justify-content-between">
+                {{ form_row(formEdit.rooms) }}
+                {{ form_row(formEdit.startAt, { 'attr': {'placeholder': "Date de début"} }) }}
+                {{ form_row(formEdit.endAt, { 'attr': {'placeholder': "Date et heure de fin"} }) }}
+            </div>
+            <h4 class="mb-4">Informations du contact</h4>
+            <div class="input-group my-3 justify-content-between">
+                {{ form_row(formEdit.civility, { 'attr': {'placeholder': "Sexe"} }) }}
+                {{ form_row(formEdit.lastname, { 'attr': {'placeholder': "Nom"} }) }}
+                {{ form_row(formEdit.firstname, { 'attr': {'placeholder': "Prénom"} }) }}
+            </div>
+            {{ form_row(formEdit.phone, { 'attr': {'placeholder': "Téléphone"} }) }}
+            {{ form_row(formEdit.email, { 'attr': {'placeholder': "Email"} }) }}
+            {# {{ form_row(formEdit.total, { 'attr': {'placeholder': "Total"} }) }} #}
+            {# {{ form_row(formEdit.users, { 'attr': {'placeholder': "Utilisateur"} }) }} #}
+
+
+        </div>
+        <div class="col-md-6">
+            <h4 class="mb-4">NOS CHAMBRES</h4>
+            <table class="table table-bordered text-center">
+                <tr>
+                    <td><img src="{{ asset('images/rooms/chambre-classique-640b3a4905e33359794851.webp') }}" alt=""
+                            style="height: 100px; object-fit:contain;"></td>
+                    <td>Chambre Classique</td>
+                    <td>400 €</td>
+                </tr>
+                <tr>
+                    <td><img src="{{ asset('images/rooms/chambre-superieur-640b3bd24764e587782215.webp') }}" alt=""
+                            style="height: 100px; object-fit:contain;"></td>
+                    <td>Chambre Supérieur</td>
+                    <td>430 €</td>
+                </tr>
+                <tr>
+                    <td><img src="{{ asset('images/rooms/chambre-grande-deluxe-640b3c2578b7e501895249.webp') }}" alt=""
+                            style="height: 100px; object-fit:contain;"></td>
+                    <td>Chambre Grande Deluxe</td>
+                    <td>480 €</td>
+                </tr>
+                <tr>
+                    <td><img src="{{ asset('images/rooms/chambre-premium-640b3c6dc5280737661011.webp') }}" alt=""
+                            style="height: 100px; object-fit:contain;"></td>
+                    <td>Chambre Premium</td>
+                    <td>530 €</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="text-center mt-5">
+        <button class="btn btn-dark">Réserver</button>
+    </div>
+    {{ form_end(formEdit) }}
+</div>
+
+
+{% endblock %}

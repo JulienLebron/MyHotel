@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<img src="{{ asset('images/admin/banniere_admin.jpg') }}" alt="">
+<div class="container mb-5">
+    <div class="container text-center mb-5">
+        <div class="alert alert-info">💬 Vous trouverez ci-dessous le tableau contenant l'ensemble des Admins
+        </div>
+
+        {% for message in app.flashes('success') %}
+        <div class="text-center alert alert-success">
+            {{ message }}
+        </div>
+        {% endfor %}
+
+
+        <a href="{{ path('app_register') }}" class="btn btn-dark mt-3">Ajouter un Admin</a>
+    </div>
+    <table class="table table-bordered table-striped table-hover text-center">
+        <thead class="table-dark">
+            <tr>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Civilité</th>
+                <th>nom</th>
+                <th>Prénom</th>
+                <th>Date de naissance</th>
+                <th>Date de création</th>
+                <th>Editer</th>
+                <th>Supprimer</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for data in users %}
+            <tr>
+                <td>{{ data.email }}</td>
+                <td>{{ data.roles | join(' - ') }}</td>
+                <td>{{ data.civility }}</td>
+                <td>{{ data.lastname }}</td>
+                <td>{{ data.firstname }}</td>
+                <td>{{ data.birthday | date('d/m/Y') }}</td>
+                <td>{{ data.createdAt | date('d/m/Y à H:i:s') }}</td>
+                <td><a href="{{ path('app_register_edit', {'id': data.id}) }}" class="btn btn-warning" style="color: #FFFFFF;"><i
+                            class="fa-solid fa-pen-to-square"></i></a></td>
+                <td><a href="{{ path('admin_delete_user', {'id': data.id}) }}" class="btn btn-danger"><i
+                            class="fa-solid fa-trash-can"></i></a></td>
+            </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+
+</div>
+{% endblock %}

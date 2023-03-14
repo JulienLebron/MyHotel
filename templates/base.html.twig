@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}K Hotel Spa | Hôtel 5 étoiles Paris | Accueil{% endblock %}</title>
+    <link rel="icon"
+        href="{{ asset('images/hotel/logo_black.png')}}">
+    {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+    {% block stylesheets %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+
+
+        h1 {
+            padding: 0 450px 300px 450px; 
+            color: #FFFFFF; 
+            font-size: 3.7em; 
+            font-weight: 400; 
+            line-height:1.45em; 
+            letter-spacing: 0em; 
+        }
+        h2 {
+            padding: 0 450px 200px 450px; 
+            color: #FFFFFF; 
+            font-size: 3.7em; 
+            font-weight: 400; 
+            line-height:1.45em; 
+            letter-spacing: 0em; 
+        }
+
+        h4 {
+            font-size: 2em;
+            color: #784343;
+            font-family: 'Futura', sans-serif;
+            line-height: 1.4em;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        p {
+            line-height: 1.9em;
+            font-size: 1.1em;
+            font-weight: 400;
+            font-family: 'Playfair Display', serif;
+            color: #000000;
+        }
+
+        th,
+        td {
+            vertical-align: middle;
+        }
+
+        .header_logo {
+            width: 54px;
+            height: 54px;
+        }
+
+        .btn-large {
+            width: 100%;
+            padding: 15px;
+            border-radius: 20px;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            font-size: 0.8em;
+            font-family: 'Futura', sans-serif;
+            text-transform: uppercase;
+        }
+
+        .btn-dark {
+            width: 200px;
+            padding: 15px;
+            font-size: 0.8em;
+            font-family: 'Futura', sans-serif;
+            text-transform: uppercase;
+            background: #FFFFFF;
+            color: #947c3c;
+            border: 1px solid #784343;
+            border-radius: 0;
+            border-right: none;
+            border-left: none;
+            transition: 0.5s ease;
+        }
+        .btn-dark:hover {
+            background: #784343;
+            color: #FFFFFF;
+        }
+        .picto {
+            width: 53px;
+            height: 53px;
+        }
+        .apropos p {
+            text-align: justify;
+            padding: 0 20px;
+        }
+    </style>
+    {% endblock %}
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light" style="background: #FFFFFF;">
+        <div class="container-fluid mx-3">
+            <a class="navbar-brand" href="{{ path('home') }}"><img src="{{ asset('images/hotel/logo_black.png')}}"
+                    class="header_logo"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{{ path('home') }}">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{{ path('rooms') }}">Chambres</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{{ path('rooms') }}">Suites</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{{ path('restaurant') }}">Restaurant & Bar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{{ path('spa') }}">Spa</a>
+                    </li>
+                    {% if is_granted('ROLE_ADMIN') %}
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{{ path('app_admin') }}"><i
+                                class="fa-solid fa-gears"></i>
+                            Administration</a>
+                    </li>
+                    {% endif %}
+                    {% if app.user %}
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{{ path('app_logout') }}"><i
+                                class="fa-solid fa-right-from-bracket"></i>
+                            Déconnexion</a>
+                    </li>
+                    {% endif %}
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{{ path('new_order') }}">
+                            Réserver</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid p-0" style="min-height: 90vh;">
+        {% block body %}
+
+        {% endblock %}
+    </div>
+
+    <footer>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+            <div class="container-fluid mx-3">
+                <a class="navbar-brand" href="{{ path('home') }}"><img src="{{ asset('images/hotel/K_logo.png')}}"
+                        class="header_logo"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="{{ path('apropos') }}">A propos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="{{ path('acces') }}">Accès</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="{{ path('acces') }}">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="{{ path('home') }}">Mentions légales</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="{{ path('home') }}">CGU</a>
+                        </li>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="{{ path('home') }}">Plan du site</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </footer>
+
+    {% block javascripts %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
+    </script>
+    {% endblock %}
+</body>
+
+</html>

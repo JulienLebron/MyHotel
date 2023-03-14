@@ -1,0 +1,128 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}K Hotel Spa | Hôtel 5 étoiles Paris | Accueil{% endblock %}
+
+{% block body %}
+
+<div class="container-fluid mb-5 p-0">
+
+
+    {# SECTION CAROUSEL #}
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{{ asset('images/hotel/banniere.jpg') }}" class="d-block w-100" alt="..."
+                    style="height: 820px; object-fit: cover;">
+                <div class="carousel-caption d-none d-md-block">
+                    <h1>Une oasis de tranquilité</h1>
+                    <a href="#spa" class="btn btn-dark" style="width: 400px;">Découvrir</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="{{ asset('images/hotel/fitness.webp') }}" class="d-block w-100" alt="..."
+                    style="height: 820px; object-fit: cover;">
+                <div class="carousel-caption d-none d-md-block">
+                    <h1>Une oasis de tranquilité</h1>
+                    <a href="#spa" class="btn btn-dark" style="width: 400px;">Découvrir</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="{{ asset('images/hotel/hammam.webp') }}" class="d-block w-100" alt="..."
+                    style="height: 820px; object-fit: cover;">
+                <div class="carousel-caption d-none d-md-block">
+                    <h1>Une oasis de tranquilité</h1>
+                    <a href="#spa" class="btn btn-dark" style="width: 400px;">Découvrir</a>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    {# FIN SECTION CAROUSEL #}
+
+    <div class="container-fluid my-5 py-3"
+        style="height: 500px; background: #F5F3EF; display: flex; align-items: middle; padding: 0 100px;" id="spa">
+        <div class="col-md-7 text-center m-auto">
+            <h4 style="padding: 0 174px;">DÉCOUVREZ UN LIEU UNIQUE POUR VOUS DÉTENDRE</h4>
+            <p class="mt-5"><em>Niché au coeur des rues chics du 16e arrondissement vous attend un oasis de
+                    tranquillité.</em></p>
+            <p>Le centre de bien-être du Majestic Hôtel-Spa, un havre de paix loin de l'agitation parisienne.
+                Évadez-vous dans notre centre de bien-être dédié exclusivement à la clientéle de l'hôtel.</p>
+            <p>Découvrez le mur d'eau, la piscine intérieure et le hammam, et vivez un moment de sérénité et de
+                lâcher-prise.</p>
+        </div>
+    </div>
+
+    <div class="container-fluid mb-5" style="padding: 0 100px;">
+        <div class="card-chambre">
+            <div class="row">
+                <div class="col-md-6 p-0" style="display: flex; align-items: middle; background: #FFFFFF;">
+                    <div class="card-text text-center my-auto px-5">
+                        <h4 class="mb-5">ESPACE DÉTENTE</h4>
+                        <p class="mb-5">Un espace de luxe près des Champs-Élysées, 450 m2 dédiés à votre bien-être.
+                            Prenez soin de votre corps et évadez-vous dans un cadre exceptionnel.</p>
+                        <p>Entrez dans un univers unique alliant luxe et relaxation dans un vaste espace de 450 m2.</p>
+                        <p>Dotée d’un système de nage à contre-courant, la piscine de 14 x 5 m et d’une profondeur de
+                            1,3 m, est chauffée à une température de 29°C. Cela vous permettra de faire quelques brasses
+                            après votre séance sportive. L'espace détente autour de la piscine vous invite à la
+                            relaxation.</p>
+                        <p>Les clients de l’hôtel profitent d’un accès à la piscine et au centre de remise en forme de
+                            8h à 21h (Réservation de créneaux horaires à la réception).</p>
+                        <p>Les bienfaits des bains de vapeur sont multiples : détente des muscles, soulagement des
+                            courbatures et élimination des toxines. Deux hammams composés d’une salle chaude et d’une
+                            salle tiède sont à votre disposition. Chaque hammam peut être privatisé afin que vous
+                            puissiez vivre un rituel de gommage et enveloppement d’après un protocole oriental.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 p-0">
+                    <img src="{{ asset('images/hotel/banniere.jpg') }}" alt="" style="height: 750px; width: 100%;">
+                </div>
+            </div>
+        </div>
+        <div class="card-chambre">
+            <div class="row">
+                <div class="col-md-6 p-0">
+                    <img src="{{ asset('images/hotel/fitness.webp') }}" alt="" style="height: 500px; width: 100%;">
+
+                </div>
+                <div class="col-md-6" style="display: flex; align-items: middle; background: #FFFFFF;">
+                    <div class="card-text text-center my-auto px-5">
+                        <h4 class="my-5">FITNESS</h4>
+                        <p class="mb-5">Vivez une journée remise en forme, dans un cadre d’exception. Idéalement situé
+                            au cœur de Paris, dans le 16e arrondissement, à deux pas de l’Étoile, Ce lieu met à votre
+                            disposition une salle de remise en forme pour prendre soin de votre corps et vous évader.
+                            Équipé d’appareils de cardio-training, l'espace vous permet de profiter de vélos debout,
+                            vélo allongé, vélo elliptique, rameur, Kinésis, charges libres, barre de danse et espalier.
+                            Profitez également des tapis de course dernière génération SKILLRUN et ses 4 programmes
+                            d’entraînement permettant d’améliorer votre vitesse, votre puissance, votre agilité et votre
+                            endurance.</p>
+                        <p>Les clients de l’hôtel profitent d’un accès à la piscine et au centre de remise en forme de
+                            8h à 21h (Réservation de créneaux horaires à la réception).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+{% endblock %}

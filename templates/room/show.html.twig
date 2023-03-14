@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+<img src="{{ asset('images/rooms/' ~ room.image) }}" alt="" style="height: 300px; width:100%; object-fit: cover;">
+
+<div class="container-fluid my-5" style="padding: 0 100px;">
+    <div class="card-chambre">
+        <div class="row">
+            <div class="col-md-6 p-0">
+                <div class="card-text m-auto" style="padding: 0 100px;">
+                    <h4 class="mt-5">CHAMBRE {{ room.title }}</h4>
+                    <p style="color: #947c3c;">SUPERFICIE: 25m² . CAPACITE : 2 personnes</p>
+                    <p class="my-5">{{ room.content }}</p>
+                    <a href="{{ path('new_order') }}" class="btn btn-dark my-5" style="width: 400px;">Voir les tarifs et
+                        les disponibilités</a>
+                </div>
+
+            </div>
+            <div class="col-md-6 p-0" style="display: flex; align-items: middle;">
+                <img src="{{ asset('images/rooms/' ~ room.image) }}" alt=""
+                    style="height: 500px; width: 100%;">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container-fluid mb-5 py-3"
+    style="height: 400px; background: #F5F3EF; display: flex; align-items: middle; padding: 0 100px;">
+    <div class="col-md-10 text-center m-auto">
+        <h4 style="padding: 0 174px;">SPÉCIFICITÉS</h4>
+        <p class="mb-5"><em>Découvrez les particularités de ce véritable cocon, reflétant
+                le raffinement & l'élégance parisienne.</em></p>
+        <div class="d-flex justify-content-around mt-5 px-5">
+            <div>
+                <img class="picto" src="{{ asset('images/icons/picto-superficie.webp') }}" alt="">
+                <p class="mt-2">Superficie 25m²</p>
+            </div>
+            <div>
+                <img class="picto" src="{{ asset('images/icons/picto-capacite.webp') }}" alt="">
+                <p class="mt-2">Capacité maximale : 2 Adultes</p>
+            </div>
+            <div>
+                <img class="picto" src="{{ asset('images/icons/picto-lit.webp') }}" alt="">
+                <p class="mt-2">Lit Queen Size ou 2 lits jumeaux</p>
+            </div>
+            <div>
+                <img class="picto" src="{{ asset('images/icons/picto-baignoire.webp') }}" alt="">
+                <p class="mt-2">Salle de bain avec baignoire</p>
+            </div>
+            <div>
+                <img class="picto" src="{{ asset('images/icons/spa.webp') }}" alt="">
+                <p class="mt-2">Accès SPA</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}

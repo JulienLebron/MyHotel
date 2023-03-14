@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+        <img src="{{ asset('images/hotel/chambre-grande-deluxe.webp') }}" alt="image profil" class="card-img-top"
+            style="height: 300px; object-fit: cover;">
+<div class="container mb-5">
+    <div class="text-center mb-5">
+        <div class="alert alert-info">💬 Vous trouverez ci-dessous le tableau contenant l'ensemble des chambres de l'hotel
+        </div>
+
+        {% for message in app.flashes('success') %}
+        <div class="text-center alert alert-success">
+            {{ message }}
+        </div>
+        {% endfor %}
+
+
+        <a href="{{ path('admin_new_room') }}" class="btn btn-primary mt-3">Ajouter une chambre</a>
+    </div>
+    <table class="table table-bordered table-striped table-hover text-center">
+        <thead class="table-dark">
+            <tr>
+                <th>Titre</th>
+                <th>Description</th>
+                <th>Photo</th>
+                <th>Prix Nuité</th>
+                <th>Date de création</th>
+                <th>Consulter</th>
+                <th>Modifier</th>
+                <th>Supprimer</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for room in rooms %}
+            <tr>
+                <td>{{ room.title }}</td>
+                <td>{{ room.description }}</td>
+                <td><img src="{{ asset('images/rooms/' ~ room.image) }}" alt="photo de la chambre"
+                        style="height: 120px; width: 120px; object-fit: contain;"></td>
+                <td>{{ room.price }} €</td>
+                <td>{{ room.createdAt | date('d/m/Y à H:i:s') }}</td>
+                <td><a href="" class="btn btn-success"><i
+                            class="fa-solid fa-eye"></i></a></td>
+                <td><a href="{{ path('admin_edit_room', {id: room.id}) }}" class="btn btn-warning" style="color: #FFFFFF;"><i
+                            class="fa-solid fa-pen-to-square"></i></a></td>
+                <td><a href="{{ path('admin_delete_room', {id: room.id}) }}" class="btn btn-danger"><i
+                            class="fa-solid fa-trash-can"></i></a></td>
+            </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+
+</div>
+
+{% endblock %}

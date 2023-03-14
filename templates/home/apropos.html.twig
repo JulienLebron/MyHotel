@@ -1,0 +1,78 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}K Hotel Spa | Hôtel 5 étoiles Paris | Accueil{% endblock %}
+
+{% block body %}
+
+<div class="container-fluid p-0">
+
+
+    {# SECTION CAROUSEL #}
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{{ asset('images/hotel/banniere_apropos.jpg') }}" class="d-block w-100" alt="..."
+                    style="height: 820px; object-fit: cover;">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2>A propos de nous</h2>
+                    <a href="#apropos" class="btn btn-dark" style="width: 400px;">Découvrir</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {# FIN SECTION CAROUSEL #}
+
+
+
+    {# SECTION A PROPOS DES CHAMBRES #}
+
+    <div class="container-fluid my-5 py-3"
+        style="height: 1100px; background: #F5F3EF; display: flex; align-items: middle; padding: 0 100px;" id="apropos">
+        <div class="col-md-7 text-center m-auto">
+            <h4 style="padding: 0 174px;">À PROPOS DE NOUS</h4>
+            <div class="row">
+                <div class="col-md-6 apropos">
+                    <p class="mt-5"><em>Dans le paysage parisien de l’hôtellerie de luxe, il faut distinguer une
+                            histoire particulière et sans égale, celle de la famille Baverez.</em></p>
+                    <p>Cent quinze ans de présence d’investissement et d’implication au quotidien pour la création et le
+                        développement d’une entreprise 100% familiale et française. L’histoire débute au début du siècle
+                        dernier. Lorsque Léonard Tauber, fondateur du Regina (1900), du Majestic (1907), et du Raphael
+                        (1925), meurt en 1944, il a déjà confié les rênes de ses hôtels à Constant Baverez, son
+                        bras-droit et associé.</p>
+                    <p class="mt-5"><em>De l’avenue Kléber à la rue la Pérouse, en passant par la place des Pyramides,
+                            les trois hôtels ont su préserver à la fois leur cachet historique et leurs caractéristiques
+                            respectives.</em></p>
+                    <p>Le Regina, inauguré lors de l’Exposition Universelle en 1900, enchante autant les touristes que
+                        les Parisiens ou les hommes d’affaires : face au Louvre et aux Tuileries, au cœur du premier
+                        arrondissement parisien, il est situé dans un écrin de verdure, à deux pas des plus grandes
+                        maisons de couture et proche des quartiers d’affaires parisiens.</p>
+                    <p>Palace de charme s’il en est, Le Raphael, construit en 1925, décoré de tapisseries et de meubles
+                        anciens, lie son histoire à celle du monde de la littérature, de la musique, du cinéma et de la
+                        politique.</p>
+                </div>
+                <div class="col-md-6 apropos">
+                    <p class="mt-5">C’est en prenant sa suite qu’il devient le premier d’une longue lignée dans l’histoire de
+                        l’hôtellerie de luxe en préservant la pérennité d’un patrimoine familial. Ce groupe demeure l’un
+                        des fleurons du luxe à la française, tout en ayant réussi à garder à travers les décennies son
+                        indépendance et sa particularité. C’est ensuite au tour du Docteur Paul Baverez, fils de
+                        Constant, de prendre la direction du groupe. Il fera à son tour appel à sa fille, Françoise, qui
+                        le rejoindra dès 1961 pour gérer les trois établissements.</p>
+                    <p>Plus récent, parce que totalement rénové en 2010, le Majestic Hôtel-Spa, situé rue La Pérouse
+                        dans le XVIème arrondissement, est à la fois plus intimiste et plus moderne. L'hôtel s’est doté
+                        d’un superbe spa, d’une magnifique piscine et d’une salle de fitness ouverts à tous.</p>
+                    <p>Issue d’une lignée de bâtisseurs de palaces parisiens, Françoise Baverez, Présidente du conseil
+                        d’Administration du groupe et sa fille, Véronique Valcke, nommée Directeur général en 2010,
+                        perpétuent de génération en génération le mythe du Raphael, du Regina et du Majestic Hôtel-Spa
+                        au service d’une clientèle exigeante.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {# FIN SECTION A PROPOS DES CHAMBRES #}
+
+
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,125 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}K Hotel Spa | Hôtel 5 étoiles Paris | Accueil{% endblock %}
+
+{% block body %}
+
+<div class="container-fluid mb-5 p-0">
+
+
+    {# SECTION CAROUSEL #}
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{{ asset('images/hotel/banniere_apropos.jpg') }}" class="d-block w-100" alt="..."
+                    style="height: 820px; object-fit: cover;">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2>Contact & Accès</h2>
+                    <a href="#rejoindre" class="btn btn-dark" style="width: 400px;">Venir au K Hôtel-spa</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {# FIN SECTION CAROUSEL #}
+
+
+
+    {# SECTION A PROPOS DES CHAMBRES #}
+
+    <div class="container-fluid py-3"
+        style="height: 1400px; display: flex; align-items: middle; padding: 0 100px;">
+        <div class="col-md-10 text-center m-auto" id="rejoindre">
+            <h4 class="mt-5" style="padding: 0 174px;">COMMENT NOUS REJOINDRE ?</h4>
+            <p class="mb-5"><em>Une situation idéale dans le 16er arrondissement. </em></p>
+            <p class="mb-5">Majestic Hôtel-Spa se dresse à deux pas de l’Arc de Triomphe et des Champs-Elysées, au coeur du 16ème
+                arrondissement de Paris. Situé sur la rive droite de la Seine, dans un quartier de l’ouest Parisien,
+                calme et à l’abri de la circulation, Majestic Hôtel-Spa est une maison bourgeoise au coeur du triangle
+                d’or composé de l’Arc de Triomphe, des Champs-Elysées et de la Tour Eiffel.</p>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.362127443927!2d2.2916769158538375!3d48.870372807816665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66feedcddf545%3A0x1b199da6adb45299!2s30%20Rue%20La%20Perouse%2C%2075116%20Paris!5e0!3m2!1sfr!2sfr!4v1678802155685!5m2!1sfr!2sfr" width="1000" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="row mt-5">
+                <div class="col-md-12 d-flex justify-content-around">
+                    <div class="mx-3">
+                        <img class="picto" src="{{ asset('images/icons/metro.webp') }}" alt="">
+                        <p>
+                            <a class="btn btn-dark mt-3" data-bs-toggle="collapse" href="#collapseExample" role="button"
+                                aria-expanded="false" aria-controls="collapseExample">
+                                En Métro
+                            </a>
+                        </p>
+                        <div class="collapse" id="collapseExample">
+                            <div class="card card-body text-start">
+                                <ul>
+                                    <li>Station Kléber à 200 mètres de l’hôtel : Ligne 6</li>
+                                    <li>Station Charles de Gaulle / Etoile 400 mètres : Ligne 1 RER</li>
+                                    <li>Station Iéna 800 mètres : Ligne 9</li>
+                                    <li>Station Victor Hugo 700 mètres : Ligne 2</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mx-3">
+                        <img class="picto" src="{{ asset('images/icons/bus.webp') }}" alt="">
+                        <p>
+                            <a class="btn btn-dark mt-3" data-bs-toggle="collapse" href="#collapseExample1"
+                                role="button" aria-expanded="false" aria-controls="collapseExample">
+                                En Bus
+                            </a>
+                        </p>
+                        <div class="collapse" id="collapseExample1">
+                            <div class="card card-body text-start">
+                                <p>Arrêts avenue Kléber :</p>
+                                <ul>
+                                <li>Trocadéro / Gare de l'Est (n° 30)</li>
+                                <li>Porte de Saint Cloud / Opéra (n° 22)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mx-3">
+                        <img class="picto" src="{{ asset('images/icons/voiture.webp') }}" alt="">
+                        <p>
+                            <a class="btn btn-dark mt-3" data-bs-toggle="collapse" href="#collapseExample2"
+                                role="button" aria-expanded="false" aria-controls="collapseExample">
+                                En Voiture
+                            </a>
+                        </p>
+                        <div class="collapse" id="collapseExample2">
+                            <div class="card card-body text-start">
+                                <p>Par le périphérique Nord ou Sud : périphérique jusqu'à la Porte Dauphine, avenue
+                                    Foch, direction Place de l’Etoile, puis Avenue Kléber, avenue des Portugais deuxième
+                                    à gauche et rue La Pérouse première à droite.</p>
+                                <p>Coordonnées GPS : Latitude : 48.8703941 / Longitude : 2.2937888</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mx-3">
+                        <img class="picto" src="{{ asset('images/icons/train.webp') }}" alt="">
+                        <p>
+                            <a class="btn btn-dark mt-3" data-bs-toggle="collapse" href="#collapseExample4"
+                                role="button" aria-expanded="false" aria-controls="collapseExample">
+                                En Train
+                            </a>
+                        </p>
+                        <div class="collapse" id="collapseExample4">
+                            <div class="card card-body text-start">
+                                <p>6 gares SNCF : </p>
+                                <ul>
+                                    <li>Gare du Nord (Eurostar/Thalys)</li>
+                                    <li>Gare de Bercy</li>
+                                    <li>Gare d'Austerlitz</li>
+                                    <li>Gare de Lyon (TGV Méditérranée/Suisse/Italie)</li>
+                                    <li>Gare Montparnasse (TGV Atlantique/Sud-Ouest)</li>
+                                    <li>Gare Saint-Mazare (Normandie)</li>
+                                    <li>Gare de l'Est (Allemagne/Orient Express)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    {% endblock %}

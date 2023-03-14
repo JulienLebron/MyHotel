@@ -1,0 +1,157 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}K Hotel Spa | Hôtel 5 étoiles Paris | Accueil{% endblock %}
+
+{% block body %}
+
+<div class="container-fluid p-0">
+
+
+  {# SECTION CAROUSEL #}
+  <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="0" class="active"
+        aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="1"
+        aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="2"
+        aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{{ asset('images/rooms/Room_Grand_Deluxe.webp') }}" class="d-block w-100" alt="..."
+          style="height: 820px; object-fit: cover;">
+        <div class="carousel-caption d-none d-md-block">
+        <h2>Découvrez un hôtel 5 étoiles près des  Champs-Elysées à Paris</h2>
+          <a href="#hotel" class="btn btn-dark" style="width: 400px;">Découvrir le K Hôtel-Spa</a>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="{{ asset('images/hotel/banniere.jpg') }}" class="d-block w-100" alt="..."
+          style="height: 820px; object-fit: cover;">
+        <div class="carousel-caption d-none d-md-block">
+          <h2>Découvrez un hôtel 5 étoiles près des  Champs-Elysées à Paris</h2>
+          <a href="#hotel" class="btn btn-dark" style="width: 400px;">Découvrir le K Hôtel-Spa</a>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="{{ asset('images/hotel/restaurant.jpg') }}" class="d-block w-100" alt="..."
+          style="height: 820px; object-fit: cover;">
+        <div class="carousel-caption d-none d-md-block">
+          <h2>Découvrez un hôtel 5 étoiles près des  Champs-Elysées à Paris</h2>
+          <a href="#hotel" class="btn btn-dark" style="width: 400px;">Découvrir le K Hôtel-Spa</a>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+      data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+      data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  {# FIN SECTION CAROUSEL #}
+
+
+
+  {# SECTION A PROPOS DES CHAMBRES #}
+
+  <div class="container-fluid my-5 py-3"
+    style="height: 500px; background: #F5F3EF; display: flex; align-items: middle; padding: 0 100px;" id="hotel">
+    <div class="col-md-7 text-center m-auto">
+      <h4 style="padding: 0 174px;">À PROPOS DE L’HÔTEL</h4>
+      <p class="mt-5"><em>Situé à deux pas de l’Arc de Triomphe et des Champs-Élysées, le Majestic Hôtel-Spa vous
+          accueille dans un décor contemporain.</em></p>
+      <p>Vous y découvrirez un boutique-hôtel au concept unique, un véritable « resort urbain » répondant à tous les
+        besoins. Que votre séjour soit long ou court, vous trouverez la chambre ou la suite parfaite pour vous. Plus de
+        la moitié de nos chambres et suites sont aménagées avec des cuisines équipées. Vous pourrez également profiter
+        d'un espace bien-être de 450 m2 composé d’une piscine et d’un espace de remise en forme.</p>
+    </div>
+  </div>
+  {# FIN SECTION A PROPOS DES CHAMBRES #}
+
+
+
+  <div class="container-fluid mb-5" style="padding: 0 100px;">
+    <div class="card-chambre">
+      <div class="row">
+        <div class="col-md-6 p-0">
+          <img src="{{ asset('images/hotel/chambre-grande-deluxe.webp') }}" alt="" style="height: 500px; width: 100%;">
+
+        </div>
+        <div class="col-md-6 p-0" style="display: flex; align-items: middle; background: #FFFFFF;">
+          <div class="card-text text-center my-auto px-5">
+            <h4 class="my-5">CHAMBRES</h4>
+            <p>Qu’elles soient de style classique ou contemporain, nos chambres spacieuses aux aménagements modernes
+              bénéficient une connexion Wi-Fi gratuite et une télévision écran plat LCD. Chaque chambre répond aux
+              attentes des voyageurs les plus raffinés. Des cuisines équipées sont aménagées dans les chambres Grande
+              Deluxe.</p>
+            <a href="{{ path('rooms') }}" class="btn btn-dark my-5">Voir les chambres</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-chambre">
+      <div class="row">
+        <div class="col-md-6 p-0" style="display: flex; align-items: middle; background: #FFFFFF;">
+          <div class="card-text text-center my-auto px-5">
+            <h4 class="my-5">SUITES</h4>
+            <p class="mb-5">Nos suites luxueuses offrent un hébergement spacieux et unique. De style classique ou
+              contemporain, chacune possède un caractère qui lui est propre. Certaines d’entre elles comportent une
+              cuisine ainsi qu’une terrasse.</p>
+            <a href="{{ path('rooms') }}" class="btn btn-dark my-5">Voir les suites</a>
+          </div>
+        </div>
+        <div class="col-md-6 p-0">
+          <img src="{{ asset('images/hotel/suite_majestic.webp') }}" alt="" style="height: 500px; width: 100%;">
+        </div>
+      </div>
+    </div>
+    <div class="card-chambre">
+      <div class="row">
+        <div class="col-md-6 p-0">
+          <img src="{{ asset('images/hotel/restaurant.jpg') }}" alt="" style="height: 500px; width: 100%;">
+
+        </div>
+        <div class="col-md-6" style="display: flex; align-items: middle; background: #FFFFFF;">
+          <div class="card-text text-center my-auto px-5">
+            <h4 class="my-5">RESTAURANT & BAR</h4>
+            <p class="mb-5">Commandez des plats savoureux à déguster dans le confort de votre chambre. Notre room
+              service 24 heures sur 24 offre une gamme élaborée de plats à savourer à tout moment de la journée ou de la
+              nuit.</p>
+            <p>Détendez-vous au bar où le décor chaleureux crée un cadre intime pour prendre le café, déguster un
+              cocktail ou savourer un plat de notre menu à la carte.</p>
+            <a href="{{ path('restaurant') }}" class="btn btn-dark my-5">Voir le Restaurant</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-chambre">
+      <div class="row">
+        <div class="col-md-6 p-0" style="display: flex; align-items: middle; background: #FFFFFF;">
+          <div class="card-text text-center my-auto px-5">
+            <h4 class="my-5">SPA</h4>
+            <p class="mb-5">Le centre de bien-être du Majestic Hôtel-Spa, un havre de paix loin de l'agitation
+              parisienne. Évadez-vous dans notre centre de bien-être dédié exclusivement à la clientéle de l'hôtel.</p>
+            <p>Découvrez le mur d'eau, la piscine intérieure et le hammam, et vivez un moment de sérénité et de
+              lâcher-prise.</p>
+            <a href="{{ path('spa') }}" class="btn btn-dark my-5">Voir le SPA</a>
+          </div>
+        </div>
+        <div class="col-md-6 p-0">
+          <img src="{{ asset('images/hotel/piscine.jpg') }}" alt="" style="height: 500px; width: 100%;">
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+
+
+{% endblock %}

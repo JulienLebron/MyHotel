@@ -1,0 +1,41 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+<img src="{{ asset('images/hotel/chambre-grande-deluxe.webp') }}" alt="image profil" class="card-img-top"
+    style="height: 300px; object-fit: cover;">
+<div class="container text-center">
+    <h4 class="my-5">
+        {% if editMode %}
+        Modifier les informations de la chambre
+        {% else %}
+        Création d'une chambre
+        {% endif %}
+    </h4>
+</div>
+
+{# form() est une fonction twig permettant d'afficher un formulaire #}
+{# {{ form(formArticle) }} #}
+
+{{ form_start(formEdit, {
+    attr : {
+        'class': 'col-md-7 mx-auto'
+    }
+}) }}
+{# form_start() et form_end() permettent de délimiter un formulaire, de modifier ses champs, de changer la méthode du formulaire ...  #}
+
+{# form_row() permet de gérer l'affichage d'un champ et de son label #}
+<div class="input-group justify-content-between">
+    {{ form_row(formEdit.title, { 'attr': {'placeholder': "Titre de la chambre"} }) }}
+    {{ form_row(formEdit.price, { 'attr': {'placeholder': "Prix nuitée"} }) }}
+    {{ form_row(formEdit.imageFile) }}
+</div>
+{{ form_row(formEdit.description, { 'attr': {'placeholder': "Description courte de la chambre", 'rows': 15} }) }}
+{{ form_row(formEdit.content, { 'attr': {'placeholder': "Description complète de la chambre", 'rows': 15} }) }}
+
+<div class="text-center">
+    <button type="submit" class="btn btn-dark my-4">Continuer</button>
+</div>
+
+{{ form_end(formEdit) }}
+
+{% endblock %}
