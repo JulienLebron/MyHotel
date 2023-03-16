@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Room;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -20,6 +21,15 @@ class RoomType extends AbstractType
                 'required' => false
             ])
             ->add('price')
+            ->add('capacity')
+            ->add('area')
+            ->add('category', ChoiceType::class, [
+                'label' => 'Catégorie',
+                'choices' => [
+                    'Chambre' => 'Chambre',
+                    'Suite' => 'Suite'
+                ]
+            ])
             // ->add('createdAt')
         ;
     }

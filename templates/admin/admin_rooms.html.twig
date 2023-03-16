@@ -21,6 +21,7 @@
         <thead class="table-dark">
             <tr>
                 <th>Titre</th>
+                <th>Catégorie</th>
                 <th>Description</th>
                 <th>Photo</th>
                 <th>Prix Nuité</th>
@@ -35,12 +36,13 @@
             {% for room in rooms %}
             <tr>
                 <td>{{ room.title }}</td>
+                <td>{{ room.category }}</td>
                 <td>{{ room.description }}</td>
                 <td><img src="{{ asset('images/rooms/' ~ room.image) }}" alt="photo de la chambre"
                         style="height: 120px; width: 120px; object-fit: contain;"></td>
                 <td>{{ room.price }} €</td>
                 <td>{{ room.createdAt | date('d/m/Y à H:i:s') }}</td>
-                <td><a href="" class="btn btn-success"><i
+                <td><a href="{{ path('rooms_show', {id: room.id}) }}" class="btn btn-success"><i
                             class="fa-solid fa-eye"></i></a></td>
                 <td><a href="{{ path('admin_edit_room', {id: room.id}) }}" class="btn btn-warning" style="color: #FFFFFF;"><i
                             class="fa-solid fa-pen-to-square"></i></a></td>

@@ -23,10 +23,11 @@
             <div class="col-md-7">
                 <p>30 rue La Perouse, Paris, France, 75116</p>
                 <p>+33 (0) 1 45 00 83 70</p>
-                <a href="{{ path('home') }}">https://www.royal-hotel.com/</a>
+                <a href="{{ path('home') }}">https://www.K-hotel.com/</a>
             </div>
             <div class="col-md-5 text-center mt-3">
-                <a class="navbar-brand" href="{{ path('home') }}"><img src="{{ asset('images/hotel/logo_black.png')}}" style="width: 100px; height: 100px;"></a>
+                <a class="navbar-brand" href="{{ path('home') }}"><img src="{{ asset('images/hotel/logo_black.png')}}"
+                        style="width: 100px; height: 100px;"></a>
             </div>
         </div>
     </div>
@@ -56,33 +57,88 @@
 
         </div>
         <div class="col-md-6">
-            <h4 class="mb-4">NOS CHAMBRES</h4>
-            <table class="table table-bordered text-center">
-                <tr>
-                    <td><img src="{{ asset('images/rooms/chambre-classique-640b3a4905e33359794851.webp') }}" alt=""
-                            style="height: 100px; object-fit:contain;"></td>
-                    <td>Chambre Classique</td>
-                    <td>400 €</td>
-                </tr>
-                <tr>
-                    <td><img src="{{ asset('images/rooms/chambre-superieur-640b3bd24764e587782215.webp') }}" alt=""
-                            style="height: 100px; object-fit:contain;"></td>
-                    <td>Chambre Supérieur</td>
-                    <td>430 €</td>
-                </tr>
-                <tr>
-                    <td><img src="{{ asset('images/rooms/chambre-grande-deluxe-640b3c2578b7e501895249.webp') }}" alt=""
-                            style="height: 100px; object-fit:contain;"></td>
-                    <td>Chambre Grande Deluxe</td>
-                    <td>480 €</td>
-                </tr>
-                <tr>
-                    <td><img src="{{ asset('images/rooms/chambre-premium-640b3c6dc5280737661011.webp') }}" alt=""
-                            style="height: 100px; object-fit:contain;"></td>
-                    <td>Chambre Premium</td>
-                    <td>530 €</td>
-                </tr>
-            </table>
+            <p class="d-flex justify-content-around">
+                <button class="btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample"
+                    aria-expanded="false" aria-controls="collapseExample">
+                    Nos Chambres
+                </button>
+                <button class="btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample1"
+                    aria-expanded="false" aria-controls="collapseExample1">
+                    Nos Suites
+                </button>
+            </p>
+            <div class="collapse show" id="collapseExample">
+                <div class="card card-body" style="border: none;">
+                    <table class="table table-bordered text-center">
+                        <tr>
+                            <td><img src="{{ asset('images/rooms/chambre-classique-640b3a4905e33359794851.webp') }}"
+                                    alt="" style="height: 100px; object-fit:contain;"></td>
+                            <td>Chambre Classique</td>
+                            <td>400 €</td>
+                        </tr>
+                        <tr>
+                            <td><img src="{{ asset('images/rooms/chambre-superieur-640b3bd24764e587782215.webp') }}"
+                                    alt="" style="height: 100px; object-fit:contain;"></td>
+                            <td>Chambre Supérieur</td>
+                            <td>430 €</td>
+                        </tr>
+                        <tr>
+                            <td><img src="{{ asset('images/rooms/chambre-grande-deluxe-640b3c2578b7e501895249.webp') }}"
+                                    alt="" style="height: 100px; object-fit:contain;"></td>
+                            <td>Chambre Grande Deluxe</td>
+                            <td>480 €</td>
+                        </tr>
+                        <tr>
+                            <td><img src="{{ asset('images/rooms/chambre-premium-640b3c6dc5280737661011.webp') }}"
+                                    alt="" style="height: 100px; object-fit:contain;"></td>
+                            <td>Chambre Premium</td>
+                            <td>530 €</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="collapse" id="collapseExample1">
+                <div class="card card-body" style="border: none;">
+                    <table class="table table-bordered text-center">
+                        <tr>
+                            <td><img src="{{ asset('images/rooms/suite-junior-6412dce1546f0095158433.webp') }}"
+                                    alt="" style="width: 175.45px; height: 100px; object-fit:contain;"></td>
+                            <td>Suite Junior</td>
+                            <td>600 €</td>
+                        </tr>
+                        <tr>
+                            <td><img src="{{ asset('images/rooms/suite-famille-6412dd2cc64ba233501325.webp') }}"
+                                    alt="" style="width: 175.45px; height: 100px; object-fit:contain;"></td>
+                            <td>Suite Famille</td>
+                            <td>630 €</td>
+                        </tr>
+                        <tr>
+                            <td><img src="{{ asset('images/rooms/suite-prestige-6412dd62d8ea3213969145.webp') }}"
+                                    alt="" style="width: 175.45px; height: 100px; object-fit:contain;"></td>
+                            <td>Suite Prestige</td>
+                            <td>670 €</td>
+                        </tr>
+                        <tr>
+                            <td><img src="{{ asset('images/rooms/suite-terrace-6412ddaf08718571625666.webp') }}"
+                                    alt="" style="width: 175.45px; height: 100px; object-fit:contain;"></td>
+                            <td>Suite Terrasse</td>
+                            <td>720 €</td>
+                        </tr>
+                        <tr>
+                            <td><img src="{{ asset('images/rooms/suite-panoramique-6412dde44b125524838357.webp') }}"
+                                    alt="" style="width: 175.45px; height: 100px; object-fit:contain;"></td>
+                            <td>Suite Panoramique</td>
+                            <td>770 €</td>
+                        </tr>
+                        <tr>
+                            <td><img src="{{ asset('images/rooms/suite-majestic2-6412de19db30b410690832.webp') }}"
+                                    alt="" style="width: 175.45px; height: 100px; object-fit:contain;"></td>
+                            <td>Suite Majestic</td>
+                            <td>850 €</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
     <div class="text-center mt-5">

@@ -26,10 +26,15 @@
 {# form_row() permet de gérer l'affichage d'un champ et de son label #}
 <div class="input-group justify-content-between">
     {{ form_row(formEdit.title, { 'attr': {'placeholder': "Titre de la chambre"} }) }}
+    {{ form_row(formEdit.category, { 'attr': {'placeholder': "Catégorie"} }) }}
     {{ form_row(formEdit.price, { 'attr': {'placeholder': "Prix nuitée"} }) }}
-    {{ form_row(formEdit.imageFile) }}
 </div>
-{{ form_row(formEdit.description, { 'attr': {'placeholder': "Description courte de la chambre", 'rows': 15} }) }}
+<div class="input-group justify-content-between">
+    {{ form_row(formEdit.imageFile) }}
+    {{ form_row(formEdit.capacity, { 'attr': {'placeholder': "Titre de la chambre"} }) }}
+    {{ form_row(formEdit.area, { 'attr': {'placeholder': "Prix nuitée"} }) }}
+</div>
+{{ form_row(formEdit.description, { 'attr': {'placeholder': "Description courte de la chambre"} }) }}
 {{ form_row(formEdit.content, { 'attr': {'placeholder': "Description complète de la chambre", 'rows': 15} }) }}
 
 <div class="text-center">

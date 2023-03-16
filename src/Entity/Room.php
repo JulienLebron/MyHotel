@@ -47,6 +47,15 @@ class Room
     #[ORM\OneToMany(mappedBy: 'rooms', targetEntity: Order::class)]
     private Collection $orders;
 
+    #[ORM\Column(nullable: true)]
+    private ?int $capacity = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?int $area = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $category = null;
+
     public function __construct()
     {
         $this->orders = new ArrayCollection();
@@ -182,6 +191,42 @@ class Room
                 $order->setRooms(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getCapacity(): ?int
+    {
+        return $this->capacity;
+    }
+
+    public function setCapacity(?int $capacity): self
+    {
+        $this->capacity = $capacity;
+
+        return $this;
+    }
+
+    public function getArea(): ?int
+    {
+        return $this->area;
+    }
+
+    public function setArea(?int $area): self
+    {
+        $this->area = $area;
+
+        return $this;
+    }
+
+    public function getCategory(): ?string
+    {
+        return $this->category;
+    }
+
+    public function setCategory(?string $category): self
+    {
+        $this->category = $category;
 
         return $this;
     }

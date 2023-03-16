@@ -25,9 +25,20 @@ class HomeController extends AbstractController
     #[Route('/rooms', name: 'rooms')]
     public function rooms(RoomRepository $repo): Response
     {
-        $rooms = $repo->findAll();
-        return $this->render('room/index.html.twig', [
+        $rooms = $repo->findByCategory('Chambre');
+        dump($rooms);
+        return $this->render('room/rooms.html.twig', [
             'rooms' => $rooms
+        ]);
+    }
+
+    #[Route('/suites', name: 'suites')]
+    public function suites(RoomRepository $repo): Response
+    {
+        $suites = $repo->findByCategory('Suite');
+        dump($suites);
+        return $this->render('room/suites.html.twig', [
+            'suites' => $suites
         ]);
     }
 
@@ -108,7 +119,7 @@ class HomeController extends AbstractController
             $manager->persist($order); // prépare l'insertion de l'order
             $manager->flush(); // on exécute la requête d'insertion 
             // cette méthode permet de nous rediriger vers la page de notre order nouvellement crée
-            $this->addFlash('success', "✅ L'action sur la order à été réalisé avec succès !");
+            $this->addFlash('success', "✅ Votre réservation à été réalisé avec succès ! <br> Vous allez recevoir un mail récapitulatif de votre réservation. <br> Merci. <br><br>");
             return $this->redirectToRoute('home');
         }
         return $this->render('home/form_order.html.twig', [

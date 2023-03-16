@@ -6,6 +6,13 @@
 
 <div class="container-fluid p-0">
 
+  {% for message in app.flashes('success') %}
+  <div class="text-center alert alert-dark mb-0">
+    {{ message|raw }}
+    <img src="{{ asset('images/hotel/logo_black.png') }}" alt="" style="width: 50px; height: 50px;">
+  </div>
+  {% endfor %}
+
 
   {# SECTION CAROUSEL #}
   <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
@@ -22,7 +29,9 @@
         <img src="{{ asset('images/rooms/Room_Grand_Deluxe.webp') }}" class="d-block w-100" alt="..."
           style="height: 820px; object-fit: cover;">
         <div class="carousel-caption d-none d-md-block">
-        <h2>Découvrez un hôtel 5 étoiles près des  Champs-Elysées à Paris</h2>
+          <p style="text-transform: uppercase; color: #FFFFFF; font-family: 'Futura', sans-serif;">K Hôtel-Spa
+          </p>
+          <h2>Découvrez un hôtel 5 étoiles près des Champs-Elysées à Paris</h2>
           <a href="#hotel" class="btn btn-dark" style="width: 400px;">Découvrir le K Hôtel-Spa</a>
         </div>
       </div>
@@ -30,7 +39,9 @@
         <img src="{{ asset('images/hotel/banniere.jpg') }}" class="d-block w-100" alt="..."
           style="height: 820px; object-fit: cover;">
         <div class="carousel-caption d-none d-md-block">
-          <h2>Découvrez un hôtel 5 étoiles près des  Champs-Elysées à Paris</h2>
+          <p style="text-transform: uppercase; color: #FFFFFF; font-family: 'Futura', sans-serif;">K Hôtel-Spa
+          </p>
+          <h2>Découvrez un hôtel 5 étoiles près des Champs-Elysées à Paris</h2>
           <a href="#hotel" class="btn btn-dark" style="width: 400px;">Découvrir le K Hôtel-Spa</a>
         </div>
       </div>
@@ -38,7 +49,9 @@
         <img src="{{ asset('images/hotel/restaurant.jpg') }}" class="d-block w-100" alt="..."
           style="height: 820px; object-fit: cover;">
         <div class="carousel-caption d-none d-md-block">
-          <h2>Découvrez un hôtel 5 étoiles près des  Champs-Elysées à Paris</h2>
+          <p style="text-transform: uppercase; color: #FFFFFF; font-family: 'Futura', sans-serif;">K Hôtel-Spa
+          </p>
+          <h2>Découvrez un hôtel 5 étoiles près des Champs-Elysées à Paris</h2>
           <a href="#hotel" class="btn btn-dark" style="width: 400px;">Découvrir le K Hôtel-Spa</a>
         </div>
       </div>
